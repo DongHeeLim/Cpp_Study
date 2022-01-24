@@ -1,5 +1,6 @@
 #include <iostream>
-#include <string.h>
+//#include <string.h>
+#include <cstring>
 using namespace std;
 
 void say_hello(string greeting = "Hello") {
@@ -23,6 +24,11 @@ Type maxt(Type x, Type y)
 
 int square(int x);
 void swap(int& x, int& y);
+int findMax(int x[], int length);
+int findLength(char* str);
+int findLength2(char* str);
+int countLiteral(char str[], char ch);
+int countLiteral2(char str[], char ch);
 
 
 int main() {
@@ -123,6 +129,36 @@ int main() {
 	}
 	cout << "\ncount : " << cnt << '\n';
 
+	char str[] = "because";
+
+	for (int i = 0; str[i] != '\0'; i++)	// 문자열의 마지막은 NULL 문자여서 NULL 전까지 '-'출력
+	{
+		cout << str[i] << '-';
+	}
+	cout << '\n';
+
+	cout << "because 길이(NULL 제외) : " << strlen(str) << '\n';
+
+
+	char str1[10] = "hi";
+	char str2[10];
+	char str3[100];
+
+	cout << strcpy(str1, "bye") << '\n';
+	cout << strcpy(str2, "good") << '\n';
+	cout << strcat(str1, str2) << '\n';
+	int testScore[5];
+
+
+	//findMax(testScore, sizeof(testScore)/sizeof(testScore[0]));
+	//findLength(str3);
+	//cout << str3 << '\n';
+	//cout << "길이 : " << findLength2(str3) << '\n';
+	
+	char sentence1[100] = "";
+	char letter = 'a';
+
+	countLiteral(sentence1, letter);
 
 	return 0;
 }
@@ -153,4 +189,109 @@ void add(int* x, int* y, int a) {
 
 	cout << subject1 <<'\n';
 	cout << subject2 <<'\n';
+}
+
+double avg(int* pT, int num) {
+	double sum = 0;
+	for (int i = 0; i < num; i++)
+	{
+		sum += *(pT + i);
+	}
+
+	return sum/num;
+}
+
+int findMax(int x[], int length) {
+	cout << "시험점수를 입력하세요. ↓↓ \n";
+
+	int max = 0;
+
+	for (int i = 0; i < length; i++)
+	{
+		cin >> x[i];
+	}
+
+	for (int i = 0; i < length; i++)
+	{
+		if (x[i] > max) max = x[i];
+	}
+
+	cout << "최고점 : " << max << '\n';
+
+	return max;
+}
+
+
+int findLength(char* str) {
+
+	int result = 0;
+
+	cout << "문자열을 입력해주세요 : ";
+	
+
+	cin >> str;
+
+	cout << "문자열의 길이는 : " << strlen(str) << '\n';
+	
+	result = strlen(str);
+
+	return result;
+}
+
+int findLength2(char* str) {
+
+	int cnt = 0;
+
+	while (str[cnt]) {	// NULL -> 0임
+		cnt++;
+	}
+	return cnt;
+}
+
+
+int countLiteral(char str[], char ch) {
+	
+	int length = 0;
+	int cnt = 0;
+
+	cout << "문자열을 입력하십시오\n";
+	cout << "->";
+
+	cin >> str;
+
+	cout << "문자열에서 검색할 문자를 입력하십시오\n";
+	cout << "->";
+
+	cin >> ch;
+
+	length = strlen(str);
+
+	for (int i = 0; i < length; i++)
+	{
+		if (str[i] == ch) {
+			cnt++;
+		}
+	}
+
+
+
+	cout << "안에" << ch << "는 총" << cnt << "개 있습니다.\n";
+
+	return cnt;
+}
+
+int countLiteral2(char str[], char ch) {
+
+	int cnt;
+	int i;
+
+	while (str[i])
+	{
+		if (str[i] == ch) {
+			cnt++;
+		}
+		i++;
+	}
+
+	return cnt;
 }

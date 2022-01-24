@@ -1,2 +1,4 @@
 ﻿  sample1.cpp
+D:\Github\Cpp_Study\sample1\sample1\sample1.cpp(144,7): warning C4101: 'str3' :참조되지 않은 지역 변수입니다.
+D:\Github\Cpp_Study\sample1\sample1\sample1.cpp(149,6): warning C4101: 'testScore' :참조되지 않은 지역 변수입니다.
   sample1.vcxproj -> D:\Github\Cpp_Study\sample1\Debug\sample1.exe
