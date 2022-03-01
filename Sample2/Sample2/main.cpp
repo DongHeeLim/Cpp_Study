@@ -49,7 +49,8 @@ int main() {
 
 	setWeek(SAT);
 	//insertCarData();
-	//PPerson group_Student = insertPersonData();
+	PPerson group_Student = insertPersonData();
+	aging(group_Student);
 	//clearMemory(group_Student);
 
 	int cnt = 5;
@@ -71,6 +72,7 @@ int main() {
 	cout << "2¹ø " << b << endl;*/
 	/*cout << "1¹ø " << c << endl;
 	cout << "2¹ø " << d << endl;*/
+
 
 	return 0;
 }

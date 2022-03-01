@@ -47,18 +47,25 @@ void clearMemory(PPerson person) {
 	delete[] person;
 }
 
-void aging(PPerson person, int numberOfPerson) {
-	
+void aging(PPerson person) {
+
+	cout << "나이 : ";
+	cin >> person->age;
+	cout << "몸무게 : ";
+	cin >> person->weight;
+	cout << "키 : ";
+	cin >> person->height;
+
+
 	cout << "1년이 지났습니다. \n";
 
-	for (int i = 0; i < numberOfPerson; i++)
-	{
-		cout << i + 1 << "번 사람의 나이   : " << person[i].age + 1<< " 세\n";
-		cout << i + 1 << "번 사람의 몸무게 : " << person[i].weight << " kg\n";
-		cout << i + 1 << "번 사람의 키     : " << person[i].height << " cm\n";
 
-		cout << "=========================================\n";
-	}
+	cout << "나이   : " << person->age + 1<< " 세\n";
+	cout << "몸무게 : " << person->weight << " kg\n";
+	cout << "키     : " << person->height << " cm\n";
+
+	cout << "=========================================\n";
+
 }
 
 tuple<int, string> testFunc2(int cnt) {
